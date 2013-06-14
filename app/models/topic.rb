@@ -4,5 +4,6 @@ class Topic < ActiveRecord::Base
   has_many :comments, inverse_of: :topic
 
   validates :name, presence: true
+  validates :content, presence: true
   validates :created_by_user, presence: true
 end

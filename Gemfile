@@ -51,6 +51,9 @@ group :test do
   gem 'database_cleaner'
 end
 
+group :development, :test do
+  gem 'faker'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'

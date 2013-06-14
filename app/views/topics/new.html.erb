@@ -2,8 +2,8 @@
   <div class="span12">
     <h1 class="title">Create a new topic</h1>
 
-    <%= form_for(@topic, class: 'form-horizontal') do |builder| %>
-      <% if @topic.erros.any? %>
+    <%= form_for(@topic, html: { class: 'form-horizontal'} ) do |builder| %>
+      <% if @topic.errors.any? %>
         <div class="alert alert-error">
           <h4>There were some errors. Please correct them and try again</h4>
           <ul>
@@ -14,7 +14,25 @@
         </div>
       <% end %>
 
+      <div class="control-group">
+        <label class="control-label" for="topic[name]">Topic Name:</label>
+        <div class="controls">
+          <%= builder.text_field(:name) %>
+        </div>
+      </div>
 
+      <div class="control-group">
+        <label class="control-label" for="topic[content]">Content</label>
+        <div class="controls">
+          <%= builder.text_area(:content, rows: 5) %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <%= builder.submit(class: 'btn btn-primary') %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

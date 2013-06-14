@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20130610074519) do
 
   create_table "topics", force: true do |t|
     t.string   "name",               null: false
+    t.text     "content"
     t.integer  "created_by_user_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"

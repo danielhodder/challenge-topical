@@ -18,6 +18,7 @@ development:
 test:
   adapter: postgresql
   database: challenge-topical-test
+  host: localhost
   username: postgres
   password: postgres
   pool: 5

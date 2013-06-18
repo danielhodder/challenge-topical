@@ -4,6 +4,7 @@ require 'rails/test_help'
 
 require 'capybara/rails'
 require 'capybara/poltergeist'
+require 'capybara-screenshot/minitest'
 
 require 'factory_girl'
 require 'database_cleaner'
@@ -26,14 +27,19 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-
   include SetupHelpers
 
   include FactoryGirl::Syntax::Methods
 end
 
 class ActionDispatch::IntegrationTest
+  Capybara.default_driver = :poltergeist
+  Capybara.current_driver = :poltergeist
   Capybara.javascript_driver = :poltergeist
+
+  setup do
+    create_user
+  end
 
   # Make the Capybara DSL available in all integration tests
   include Capybara::DSL

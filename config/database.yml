@@ -8,7 +8,7 @@ development:
   database: challenge-topical-dev
   host: localhost
   username: postgres
-  password: postgres
+  password: password
   pool: 5
   timeout: 5000
 
@@ -20,7 +20,7 @@ test:
   database: challenge-topical-test
   host: localhost
   username: postgres
-  password: postgres
+  password: password
   pool: 5
   timeout: 5000
 

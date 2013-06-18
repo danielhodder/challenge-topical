@@ -6,4 +6,9 @@ class ApplicationController < ActionController::Base
   prepend_before_filter do
     session[:user_id] ||= User.first.id
   end
+
+  def current_user
+    User.find(session[:user_id])
+  end
+  helper_method(:current_user)
 end
